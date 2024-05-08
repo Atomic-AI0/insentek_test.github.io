@@ -41,3 +41,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Convert README.md to index.html
+        run: pandoc README.md -o index.html
+      - name: Install Pandoc
+        run: sudo apt-get install pandoc
